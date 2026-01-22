@@ -49,6 +49,19 @@ export default function HomeHero() {
         ease: "power3.out",
       }
     );
+    gsap.fromTo(
+      textRef.current.querySelectorAll("h2, span"),
+      { opacity: 0, y: 20, scaleX: 0 },
+      {
+        opacity: 1,
+        y: 0,
+        scaleX: 1,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power4.out",
+      }
+    );
+
   }, [index]);
 
   useEffect(() => {
@@ -78,7 +91,7 @@ export default function HomeHero() {
           ref={textRef}
           className="px-6 sm:px-12 lg:pl-24 max-w-3xl text-center lg:text-left"
         >
-          <p className="text-yellow-400 font-semibold tracking-wide mb-3 text-sm sm:text-base">
+          <p className="text-[#e1921f] font-semibold tracking-wide mb-3 text-sm sm:text-base">
             {slides[index].subtitle}
           </p>
 
@@ -86,12 +99,25 @@ export default function HomeHero() {
             {slides[index].title}
           </h1>
 
+          <div className="relative inline-block mb-6">
+            <h2 className="text-[#e1921f] text-lg sm:text-xl md:text-2xl font-medium tracking-wide relative z-10">
+              Building Dreams, Creating Realities
+            </h2>
+
+            {/* Accent Line */}
+            <span className="absolute left-0 -bottom-2 h-[3px] w-14 bg-[#e1921f]"></span>
+
+            {/* Glow Effect */}
+            <span className="absolute inset-0 bg-[#e1921f]/20 blur-xl rounded-md -z-10"></span>
+          </div>
+
+
           <p className="text-gray-200 mb-8 text-sm sm:text-base">
             {slides[index].text}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button className="bg-yellow-400 text-white px-6 py-3 font-semibold hover:bg-yellow-500 transition w-full sm:w-auto">
+            <button className="bg-[#e1921f] text-white px-6 py-3 font-semibold hover:bg-yellow-500 transition w-full sm:w-auto">
               GET A QUOTE
             </button>
             <button className="border text-white border-white px-6 py-3 hover:bg-white hover:text-black transition w-full sm:w-auto">

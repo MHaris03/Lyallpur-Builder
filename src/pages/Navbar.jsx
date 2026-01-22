@@ -37,7 +37,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <img
               src="/logo.png"
-              alt="Industrus"
+              alt="Industries"
               className="h-16 sm:h-20 w-auto object-contain"
             />
           </div>
@@ -57,7 +57,7 @@ export default function Header() {
                     timeoutId = setTimeout(() => setIsServicesOpen(false), 200);
                   }}
                 >
-                  <a href={to} className="flex items-center gap-1 hover:text-yellow-400 transition">
+                  <a href={to} className="flex items-center gap-1 hover:text-[#e1921f] transition">
                     {label}
                   </a>
                   {isServicesOpen && (
@@ -66,7 +66,7 @@ export default function Header() {
                         <li key={label}>
                           <a
                             href={to}
-                            className="block px-4 py-2 text-sm hover:bg-gray-100 hover:text-yellow-400"
+                            className="block px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#e1921f]"
                           >
                             {label}
                           </a>
@@ -76,7 +76,7 @@ export default function Header() {
                   )}
                 </div>
               ) : (
-                <a key={label} href={to} className="hover:text-yellow-400 transition">
+                <a key={label} href={to} className="hover:text-[#e1921f] transition">
                   {label}
                 </a>
               )
@@ -85,7 +85,7 @@ export default function Header() {
 
           {/* CTA */}
           <div className="flex items-center gap-4">
-            <button className="bg-yellow-400 px-5 py-2 font-semibold text-black hover:bg-yellow-500 transition">
+            <button className="bg-[#e1921f] text-white px-6 py-3 font-semibold hover:bg-yellow-500 transition w-full sm:w-auto">
               GET A QUOTE
             </button>
 

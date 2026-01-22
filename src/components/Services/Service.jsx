@@ -5,23 +5,44 @@ import service3 from "../../assets/service-3.jpg"
 
 const services = [
     {
-        title: "Automobile & Manufacturing",
+        title: "Residential Construction",
         desc:
-            "We produce positive results from growing industrial estates, we have established a corporate or mandate to maintain the manufacturing economy.",
+            "We design and build high-quality residential homes with strong structures, modern layouts, and long-lasting materials. From concept to completion, we ensure comfort, safety, and durability.",
         image: service1,
         icon: Factory,
     },
     {
-        title: "Mechanical Engineering",
+        title: "Commercial Construction",
         desc:
-            "We produce positive results from growing industrial estates, we have established a corporate or mandate to maintain the manufacturing economy.",
+            "We deliver reliable commercial construction solutions for offices, plazas, and business spaces, focused on functionality, durability, and timely project completion.",
         image: service2,
         icon: Cog,
     },
     {
-        title: "Oil Gas & Power Plant",
+        title: "Renovation & Remodeling",
         desc:
-            "We produce positive results from growing industrial estates, we have established a corporate or mandate to maintain the manufacturing economy.",
+            "We transform existing spaces with smart renovation and remodeling solutions that enhance appearance, functionality, and property value.",
+        image: service3,
+        icon: Fuel,
+    },
+    {
+        title: "Interior & Exterior Works",
+        desc:
+            "We create modern and elegant interiors and exteriors that reflect quality craftsmanship and contemporary design standards.",
+        image: service1,
+        icon: Factory,
+    },
+    {
+        title: "Grey Structure Construction",
+        desc:
+            "We provide strong and reliable grey structure construction using approved drawings and quality materials to ensure long-term structural stability.",
+        image: service2,
+        icon: Cog,
+    },
+    {
+        title: "Project Planning & Management",
+        desc:
+            "We manage construction projects efficiently with proper planning, scheduling, and supervision to deliver quality results within budget and time.",
         image: service3,
         icon: Fuel,
     },
@@ -34,14 +55,14 @@ export default function Service() {
 
                 {/* SECTION HEADER */}
                 <div className="text-center max-w-3xl mx-auto">
-                    <p className="text-yellow-400 font-bold tracking-widest text-sm mb-3">
+                    <p className="text-[#e1921f] font-bold tracking-widest text-sm mb-3">
                         OUR SERVICES
                     </p>
 
                     <h2 className="text-3xl md:text-4xl font-extrabold text-[#0b1d3a] leading-tight">
                         High Quality Construction Solutions <br />
                         For Residentials &{" "}
-                        <span className="text-yellow-400">Industries!</span>
+                        <span className="text-[#e1921f]">Industries!</span>
                     </h2>
 
                     <p className="mt-6 text-gray-600">
@@ -71,7 +92,7 @@ export default function Service() {
 
                                     {/* ICON BADGE */}
                                     <div
-                                        className="absolute -bottom-6 left-6 w-14 h-14 bg-yellow-400 
+                                        className="absolute -bottom-6 left-6 w-14 h-14 bg-[#e1921f] 
                                flex items-center justify-center shadow-lg"
                                     >
                                         <Icon className="text-white" size={28} />
@@ -91,7 +112,7 @@ export default function Service() {
                                     <a
                                         href="#"
                                         className="text-sm font-semibold text-[#0b1d3a] 
-                               group-hover:text-yellow-400 transition"
+                               group-hover:text-[#e1921f] transition"
                                     >
                                         READ MORE
                                     </a>

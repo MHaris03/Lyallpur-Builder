@@ -9,7 +9,7 @@ export default function AboutSection() {
                 <div className="text-center lg:text-left">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0b1d3a] leading-tight">
                         We're Building Everything Best <br className="hidden sm:block" />
-                        That You <span className="text-yellow-400">Needed!</span>
+                        That You <span className="text-[#e1921f]">Needed!</span>
                     </h1>
 
                     <p className="mt-5 sm:mt-6 text-gray-600 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base">
@@ -21,7 +21,7 @@ export default function AboutSection() {
                     <div className="mt-8 sm:mt-10 grid sm:grid-cols-2 gap-6 sm:gap-8">
 
                         <div className="flex gap-4 items-start">
-                            <div className="text-yellow-400 shrink-0">
+                            <div className="text-[#e1921f] shrink-0">
                                 <Hammer size={36} />
                             </div>
                             <div>
@@ -36,7 +36,7 @@ export default function AboutSection() {
                         </div>
 
                         <div className="flex gap-4 items-start">
-                            <div className="text-yellow-400 shrink-0">
+                            <div className="text-[#e1921f] shrink-0">
                                 <Target size={36} />
                             </div>
                             <div>
@@ -53,7 +53,7 @@ export default function AboutSection() {
                     </div>
 
                     <button
-                        className="mt-8 sm:mt-10 bg-yellow-400 text-black font-semibold 
+                        className="mt-8 sm:mt-10 bg-[#e1921f] text-black font-semibold 
                        px-6 sm:px-8 py-3 sm:py-4 
                        transition-all duration-300 hover:bg-[#0b1d3a] hover:text-white"
                     >
