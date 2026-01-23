@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "../../public/logo.png";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -8,10 +8,11 @@ export default function Header() {
   let timeoutId = null;
 
   const navItems = [
-    { label: "Home", to: "#" },
-    { label: "Company", to: "#" },
-    { label: "Services", to: "#" },
-    { label: "Projects", to: "#" },
+    { label: "Home", to: "/" },
+    { label: "About Us", to: "/about" },
+    { label: "Services", to: "/our-services" },
+    { label: "Our Work", to: "#" },
+    { label: "Gallery", to: "/our-gallery" },
     { label: "Blog", to: "#" },
     { label: "Contact Us", to: "#" },
   ];
@@ -105,9 +106,16 @@ export default function Header() {
             }`}
         >
           <div className="flex items-center justify-between p-4 border-b">
-            <img src={logo} alt="Industrus" className="h-16 w-16 object-contain" />
+            {/* <img src={logo} alt="Industrus" className="h-16 w-16 object-contain" /> */}
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo.png"
+                alt="Industries"
+                className="h-16 sm:h-20 w-auto object-contain"
+              />
+            </div>
             <button
-              className="text-2xl font-bold"
+              className="text-2xl text-red-500 font-bold"
               onClick={() => setIsMenuOpen(false)}
             >
               ×
@@ -116,14 +124,14 @@ export default function Header() {
 
           <nav className="flex flex-col p-6 space-y-4 text-lg">
             {navItems.map(({ label, to }) => (
-              <a
+              <Link
                 key={label}
                 href={to}
                 className="font-medium text-[#0b1d3a]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {label}
-              </a>
+              </Link>
             ))}
 
           </nav>

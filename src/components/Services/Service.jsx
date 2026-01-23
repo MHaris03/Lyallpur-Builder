@@ -1,4 +1,11 @@
-import { Factory, Cog, Fuel } from "lucide-react";
+import {
+    Home,
+    Building2,
+    Wrench,
+    Paintbrush,
+    Layers,
+    ClipboardList
+} from "lucide-react";
 import service1 from "../../assets/service-1.jpg"
 import service2 from "../../assets/service-2.jpg"
 import service3 from "../../assets/service-3.jpg"
@@ -9,42 +16,42 @@ const services = [
         desc:
             "We design and build high-quality residential homes with strong structures, modern layouts, and long-lasting materials. From concept to completion, we ensure comfort, safety, and durability.",
         image: service1,
-        icon: Factory,
+        icon: Home,
     },
     {
         title: "Commercial Construction",
         desc:
             "We deliver reliable commercial construction solutions for offices, plazas, and business spaces, focused on functionality, durability, and timely project completion.",
         image: service2,
-        icon: Cog,
+        icon: Building2,
     },
     {
         title: "Renovation & Remodeling",
         desc:
             "We transform existing spaces with smart renovation and remodeling solutions that enhance appearance, functionality, and property value.",
         image: service3,
-        icon: Fuel,
+        icon: Wrench,
     },
     {
         title: "Interior & Exterior Works",
         desc:
             "We create modern and elegant interiors and exteriors that reflect quality craftsmanship and contemporary design standards.",
         image: service1,
-        icon: Factory,
+        icon: Paintbrush,
     },
     {
         title: "Grey Structure Construction",
         desc:
             "We provide strong and reliable grey structure construction using approved drawings and quality materials to ensure long-term structural stability.",
         image: service2,
-        icon: Cog,
+        icon: Layers,
     },
     {
         title: "Project Planning & Management",
         desc:
             "We manage construction projects efficiently with proper planning, scheduling, and supervision to deliver quality results within budget and time.",
         image: service3,
-        icon: Fuel,
+        icon: ClipboardList,
     },
 ];
 

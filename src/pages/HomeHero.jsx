@@ -81,7 +81,6 @@ export default function HomeHero() {
         alt=""
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
-
       {/* Overlay */}
       <div className="absolute inset-0"></div>
 
@@ -110,7 +109,6 @@ export default function HomeHero() {
             {/* Glow Effect */}
             <span className="absolute inset-0 bg-[#e1921f]/20 blur-xl rounded-md -z-10"></span>
           </div>
-
 
           <p className="text-gray-200 mb-8 text-sm sm:text-base">
             {slides[index].text}

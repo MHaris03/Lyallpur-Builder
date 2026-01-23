@@ -1,13 +1,13 @@
 import AboutSection from "../../pages/Aboutsection";
-import HomeHero from "../../pages/Heropage";
-import Navbar  from "../../pages/Navbar";
+import HomeHero from "../../pages/HomeHero";
+import Workflow from "../../pages/WorkFlow";
 
 export default function Home() {
     return (
         <>
-            <Navbar />
             <HomeHero />
-            <AboutSection/>
+            <Workflow />
+            <AboutSection />
         </>
     );
 }
