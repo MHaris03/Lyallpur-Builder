@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -7,17 +7,35 @@ export default function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   let timeoutId = null;
 
+  const location = useLocation();
+
   const navItems = [
     { label: "Home", to: "/" },
     { label: "About Us", to: "/about" },
-    { label: "Services", to: "/our-services" },
+    {
+      label: "Services",
+      to: "/our-services",
+      hasDropdown: true,
+    },
     { label: "Our Work", to: "#" },
     { label: "Gallery", to: "/our-gallery" },
     { label: "Blog", to: "#" },
-    { label: "Contact Us", to: "#" },
+    { label: "Contact Us", to: "/contact" },
   ];
 
-
+  const serviceItems = [
+    { label: "Residential Construction", to: "/services/residential-construction" },
+    { label: "Commercial Construction", to: "/services/commercial-construction" },
+    { label: "Renovation & Remodeling", to: "/services/renovation-remodeling" },
+    { label: "Interior & Exterior Works", to: "/services/interior-exterior" },
+    { label: "Grey Structure Construction", to: "/services/grey-structure" },
+    { label: "Project Planning & Management", to: "/services/project-planning" },
+    { label: "Electrical & Plumbing Services", to: "/services/electrical-plumbing" },
+    { label: "Maintenance & Repair Services", to: "/services/maintenance-repair" },
+    { label: "Architectural Design & Drawings", to: "/services/architectural-design" },
+    { label: "3D Elevation & Visualization", to: "/services/3d-visualization" },
+    { label: "Structural Engineering Services", to: "/services/structural-engineering" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -58,37 +76,54 @@ export default function Header() {
                     timeoutId = setTimeout(() => setIsServicesOpen(false), 200);
                   }}
                 >
-                  <a href={to} className="flex items-center gap-1 hover:text-[#e1921f] transition">
+                  <Link
+                    to={to}
+                    className={`flex items-center gap-1 transition ${location.pathname.includes("services")
+                      ? "text-[#e1921f]"
+                      : "hover:text-[#e1921f]"
+                      }`}
+                  >
                     {label}
-                  </a>
+                    <span className="text-sm">▾</span>
+                  </Link>
                   {isServicesOpen && (
-                    <ul className="absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md overflow-hidden">
+                    <ul className="absolute top-full left-0 mt-2 w-64 bg-white shadow-md rounded-md overflow-hidden z-50">
                       {serviceItems.map(({ label, to }) => (
                         <li key={label}>
-                          <a
-                            href={to}
-                            className="block px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#e1921f]"
+                          <Link
+                            to={to}
+                            className={`block px-4 py-2 text-sm transition hover:bg-gray-100 hover:text-[#e1921f] ${location.pathname === to ? "text-[#e1921f]" : ""
+                              }`}
                           >
                             {label}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
                   )}
                 </div>
               ) : (
-                <a key={label} href={to} className="hover:text-[#e1921f] transition">
+                <Link
+                  key={label}
+                  to={to}
+                  className={`transition ${location.pathname === to ? "text-[#e1921f]" : "hover:text-[#e1921f]"
+                    }`}
+                >
                   {label}
-                </a>
+                </Link>
               )
             )}
           </nav>
 
-          {/* CTA */}
-          <div className="flex items-center gap-4">
-            <button className="bg-[#e1921f] text-white px-6 py-3 font-semibold hover:bg-yellow-500 transition w-full sm:w-auto">
+          {/* CTA + Mobile Menu Button */}
+          <div className="flex items-center gap-3">
+            {/* Quote Button – visible on ALL screens */}
+            <Link
+              to="/contact"
+              className="hidden sm:inline-block bg-[#e1921f] text-white px-5 py-2 font-semibold hover:bg-yellow-500 transition"
+            >
               GET A QUOTE
-            </button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
@@ -98,6 +133,7 @@ export default function Header() {
               {isMenuOpen ? "×" : "☰"}
             </button>
           </div>
+
         </div>
 
         {/* Mobile Menu */}
@@ -106,7 +142,6 @@ export default function Header() {
             }`}
         >
           <div className="flex items-center justify-between p-4 border-b">
-            {/* <img src={logo} alt="Industrus" className="h-16 w-16 object-contain" /> */}
             <div className="flex items-center gap-3">
               <img
                 src="/logo.png"
@@ -122,19 +157,71 @@ export default function Header() {
             </button>
           </div>
 
-          <nav className="flex flex-col p-6 space-y-4 text-lg">
-            {navItems.map(({ label, to }) => (
-              <Link
-                key={label}
-                href={to}
-                className="font-medium text-[#0b1d3a]"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {label}
-              </Link>
-            ))}
+          <nav className="flex flex-col p-6 space-y-3 text-lg">
+            {navItems.map(({ label, to, hasDropdown }) =>
+              hasDropdown ? (
+                <div key={label} >
+                  {/* Services Button */}
+                  <Link
+                    to="/our-services"
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`font-semibold ${location.pathname.includes("services")
+                        ? "text-[#e1921f]"
+                        : "text-[#0b1d3a]"
+                      }`}
+                  >
+                    Services
+                  </Link>
 
+                  {/* Dropdown toggle icon */}
+                  <button
+                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    className="text-xl font-bold text-[#0b1d3a] ml-2"
+                  >
+                    {isServicesOpen ? "−" : "+"}
+                  </button>
+
+                  {/* Mobile Dropdown */}
+                  {isServicesOpen && (
+                    <div className="mt-2 ml-4 flex flex-col space-y-2">
+                      {serviceItems.map(({ label, to }) => (
+                        <Link
+                          key={label}
+                          to={to}
+                          onClick={() => setIsMenuOpen(false)}
+                          className={`text-sm font-medium ${location.pathname === to
+                            ? "text-[#e1921f]"
+                            : "text-[#0b1d3a]"
+                            } hover:text-[#e1921f]`}
+                        >
+                          {label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={label}
+                  to={to}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="font-semibold text-[#0b1d3a] hover:text-[#e1921f]"
+                >
+                  {label}
+                </Link>
+              )
+            )}
+
+            {/* Mobile GET A QUOTE */}
+            <Link
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-6 bg-[#e1921f] text-white text-center py-3 font-semibold hover:bg-yellow-500 transition"
+            >
+              GET A QUOTE
+            </Link>
           </nav>
+
         </div>
       </div>
 

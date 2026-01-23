@@ -8,10 +8,13 @@ import Gallery from "./pages/Gallery";
 import WhyChooseUs from "./pages/WhyChoose";
 import AboutUs from "./pages/AboutUs";
 import Navbar from "./pages/Navbar";
+import ScrollToTop from "./components/Scroll/ScrollTop";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route
@@ -29,6 +32,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/our-services" element={<OurService />} />
         <Route path="/our-gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact/>} />
 
       </Routes>
 
