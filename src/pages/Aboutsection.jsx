@@ -13,9 +13,9 @@ export default function AboutSection() {
                     </h1>
 
                     <p className="mt-5 sm:mt-6 text-gray-600 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base">
-                        Construction is a general term meaning the art and science to form
-                        objects systems organizations, and comes from Latin construction
-                        and Old French construction.
+                        We turn ideas into strong, reliable structures. From residential homes to
+                        large-scale commercial projects, our construction process is built on
+                        quality materials, skilled workmanship, and on-time delivery you can trust.
                     </p>
 
                     <div className="mt-8 sm:mt-10 grid sm:grid-cols-2 gap-6 sm:gap-8">
@@ -26,11 +26,11 @@ export default function AboutSection() {
                             </div>
                             <div>
                                 <h4 className="font-bold text-[#0b1d3a] mb-1 text-sm sm:text-base">
-                                    Industrus Mission
+                                    Our Mission
                                 </h4>
                                 <p className="text-gray-600 text-xs sm:text-sm">
-                                    Construction is a general term meaning the art and science
-                                    to form objects systems.
+                                    Our mission is to deliver quality construction with strong structures,
+                                    smart planning, and complete customer satisfaction on every project.
                                 </p>
                             </div>
                         </div>
@@ -44,12 +44,11 @@ export default function AboutSection() {
                                     Our Vision
                                 </h4>
                                 <p className="text-gray-600 text-xs sm:text-sm">
-                                    Construction is a general term meaning the art and science
-                                    to form objects systems.
+                                    Our vision is to become a trusted construction partner by building
+                                    durable, modern, and value-driven spaces for future generations.
                                 </p>
                             </div>
                         </div>
-
                     </div>
 
                     <button
